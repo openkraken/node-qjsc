@@ -102,3 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+compile_commands.json
+
+build/
+.clangd

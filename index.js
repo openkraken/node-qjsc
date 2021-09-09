@@ -1,0 +1,1 @@
+var bindings = require('bindings')('qjsc_20210307.node');

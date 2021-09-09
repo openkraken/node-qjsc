@@ -1,0 +1,24 @@
+{
+  "name": "qjsc",
+  "version": "0.0.1",
+  "description": "Node.js addon for the Quickjs compiler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openkraken/node-qjsc.git"
+  },
+  "author": "andycall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/openkraken/node-qjsc/issues"
+  },
+  "homepage": "https://github.com/openkraken/node-qjsc#readme",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "nan": "^2.15.0",
+    "node-addon-api": "^4.1.0"
+  }
+}
