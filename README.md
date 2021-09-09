@@ -1,6 +1,10 @@
 # node-qjsc
 Node.js addon for the Quickjs compiler
 
+supported Quickjs version:
+
++ 20210307
+
 ## Install
 
 ```
