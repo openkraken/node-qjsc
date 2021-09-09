@@ -1,6 +1,11 @@
 # node-qjsc
 Node.js addon for the Quickjs compiler
 
+## Install
+
+```
+npm install qjsc --save
+```
 
 ## Usage
 
