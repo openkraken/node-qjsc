@@ -4,7 +4,7 @@
   "description": "Node.js addon for the Quickjs compiler",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/jasmine test.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
     "bindings": "^1.5.0",
     "nan": "^2.15.0",
     "node-addon-api": "^4.1.0"
+  },
+  "devDependencies": {
+    "jasmine": "^3.9.0"
   }
 }
