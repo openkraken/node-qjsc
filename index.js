@@ -11,8 +11,8 @@ class Qjsc {
     console.log('supported version: ' + supportedVersion.join(', '));
   }
 
-  dumpByteCode(code) {
-    return this._bindings.dumpByteCode(code);
+  dumpByteCode(code, sourceURL = 'internal://') {
+    return this._bindings.dumpByteCode(code, sourceURL);
   }
 
   version() {

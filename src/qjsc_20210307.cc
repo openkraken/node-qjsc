@@ -27,8 +27,8 @@ static void reportError(Napi::Env &env, JSContext *ctx, JSValue error) {
 Napi::Value DumpByteCode(const Napi::CallbackInfo &info) {
   Napi::Env env = info.Env();
 
-  if (info.Length() == 0) {
-    Napi::TypeError::New(env, "1 arguments required").ThrowAsJavaScriptException();
+  if (info.Length() < 2) {
+    Napi::TypeError::New(env, "2 arguments required").ThrowAsJavaScriptException();
     return env.Null();
   }
 
@@ -37,12 +37,18 @@ Napi::Value DumpByteCode(const Napi::CallbackInfo &info) {
     return env.Null();
   }
 
+  if (!info[1].IsString()) {
+    Napi::TypeError::New(env, "2st arguments should be string.").ThrowAsJavaScriptException();
+    return env.Null();
+  }
+
   JSRuntime *runtime = JS_NewRuntime();
   JSContext *ctx = JS_NewContext(runtime);
 
   std::string code = info[0].As<Napi::String>().Utf8Value();
+  std::string sourceUrl = info[1].As<Napi::String>().Utf8Value();
 
-  JSValue object = JS_Eval(ctx, code.c_str(), code.size(), "internal://",
+  JSValue object = JS_Eval(ctx, code.c_str(), code.size(), sourceUrl.c_str(),
                            JS_EVAL_TYPE_GLOBAL | JS_EVAL_FLAG_COMPILE_ONLY);
   if (JS_IsException(object)) {
     JSValue error = JS_GetException(ctx);
