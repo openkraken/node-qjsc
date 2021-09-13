@@ -120,7 +120,7 @@ Napi::Value evalByteCode(const Napi::CallbackInfo &info) {
 */
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
   exports.Set(Napi::String::New(env, "dumpByteCode"), Napi::Function::New(env, DumpByteCode));
-  exports.Set(Napi::String::New(env, "version"), Napi::String::New(env, "2021-03-07"));
+  exports.Set(Napi::String::New(env, "version"), Napi::String::New(env, "20210327"));
   exports.Set(Napi::String::New(env, "evalByteCode"), Napi::Function::New(env, evalByteCode));
   return exports;
 }

@@ -23,6 +23,9 @@ qjsc.dumpByteCode('function hello() { return 1 + 1};'); // <Buffer ...>
 // Use specified quickjs version
 qjsc = new Qjsc('20210327');
 
+// Get all supported versions.
+qjsc.getAllSupportedVersion();
+
 // Evaluate bytecode in quickjs engine directly.
 qjsc.evalByteCode(buffer);
 ```

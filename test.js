@@ -25,4 +25,12 @@ describe('qjsc', () => {
     let buffer = qjsc.dumpByteCode(code);
     expect(qjsc.evalByteCode(buffer)).toBe('11234');
   });
+
+  it('support 20210327', () => {
+    expect(qjsc.version).toBe('20210327');
+  });
+
+  it('get all supported version', () => {
+    expect(qjsc.getAllSupportedVersion()).toEqual(['20210327']);
+  });
 });

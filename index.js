@@ -11,7 +11,7 @@ class Qjsc {
     console.log('supported version: ' + supportedVersion.join(', '));
   }
 
-  supportedVersion() {
+  getAllSupportedVersion() {
     return supportedVersion;
   }
 
@@ -19,8 +19,8 @@ class Qjsc {
     return this._bindings.dumpByteCode(code, sourceURL);
   }
 
-  version() {
-    return this._bindings.version();
+  get version() {
+    return this._bindings.version;
   }
 
   evalByteCode(buffer) {
