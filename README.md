@@ -3,7 +3,7 @@ Node.js addon for the Quickjs compiler
 
 supported Quickjs version:
 
-+ 20210307
++ 20210327
 
 ## Install
 
@@ -19,6 +19,9 @@ const qjsc = new Qjsc();
 
 // Dump bytecode from javascript source;
 qjsc.dumpByteCode('function hello() { return 1 + 1};'); // <Buffer ...>
+
+// Use specified quickjs version
+qjsc = new Qjsc('20210327');
 
 // Evaluate bytecode in quickjs engine directly.
 qjsc.evalByteCode(buffer);

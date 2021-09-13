@@ -2,9 +2,9 @@
   "targets": [
     {
       # myModule is the name of your native addon
-      "target_name": "qjsc_20210307",
+      "target_name": "qjsc_20210327",
       "sources": [
-        "src/qjsc_20210307.cc",
+        "src/qjsc_20210327.cc",
         "deps/quickjs_2021_03_27/cutils.c",
         "deps/quickjs_2021_03_27/cutils.h",
         "deps/quickjs_2021_03_27/libregexp.c",

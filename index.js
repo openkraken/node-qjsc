@@ -1,7 +1,7 @@
-const supportedVersion = ['20210307'];
+const supportedVersion = ['20210327'];
 
 class Qjsc {
-  constructor(version = '20210307') {
+  constructor(version = '20210327') {
     if (supportedVersion.indexOf(version) === -1) {
       throw new Error('Unsupported quickjs version: ' + version);
     }
@@ -9,6 +9,10 @@ class Qjsc {
   }
   help() {
     console.log('supported version: ' + supportedVersion.join(', '));
+  }
+
+  supportedVersion() {
+    return supportedVersion;
   }
 
   dumpByteCode(code, sourceURL = 'internal://') {
