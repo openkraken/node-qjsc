@@ -3,6 +3,9 @@
   "version": "0.1.4",
   "description": "Node.js addon for the Quickjs compiler",
   "main": "index.js",
+  "bin": {
+    "qjsc": "./bin/qjsc.js"
+  },
   "scripts": {
     "test": "./node_modules/.bin/jasmine test.js"
   },
@@ -18,6 +21,7 @@
   "homepage": "https://github.com/openkraken/node-qjsc#readme",
   "dependencies": {
     "bindings": "^1.5.0",
+    "commander": "^8.2.0",
     "nan": "^2.15.0",
     "node-addon-api": "^4.1.0"
   },
