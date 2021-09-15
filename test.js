@@ -4,7 +4,7 @@ const qjsc = new Qjsc();
 
 describe('qjsc', () => {
   it('throw error when empty arguments', () => {
-    expect(() => qjsc.dumpByteCode()).toThrowError('1st arguments should be string.');
+    expect(() => qjsc.compile()).toThrowError('1st arguments should be string.');
   });
 
   it('throw error when js syntax not correct', () => {
@@ -14,7 +14,7 @@ describe('qjsc', () => {
     console.log(111;
 
     `;
-    expect(() => qjsc.dumpByteCode(code)).toThrowError();
+    expect(() => qjsc.compile(code)).toThrowError();
   });
 
   it('return bytecode binary', () => {
@@ -22,8 +22,8 @@ describe('qjsc', () => {
     function f() { return 1 + '1234'; }
     f();
     `;
-    let buffer = qjsc.dumpByteCode(code);
-    expect(qjsc.evalByteCode(buffer)).toBe('11234');
+    let buffer = qjsc.compile(code);
+    expect(qjsc._evalByteCode(buffer)).toBe('11234');
   });
 
   it('support 20210327', () => {
@@ -31,6 +31,6 @@ describe('qjsc', () => {
   });
 
   it('get all supported version', () => {
-    expect(qjsc.getAllSupportedVersion()).toEqual(['20210327']);
+    expect(qjsc.getSupportedVersions()).toEqual(['20210327']);
   });
 });

@@ -1,8 +1,7 @@
 # node-qjsc
-Node.js addon for the Quickjs compiler
+> Node.js addon for the [QuickJS](https://github.com/bellard/quickjs) compiler.
 
-supported Quickjs version:
-
+Current supported version:
 + 20210327
 
 ## Install
@@ -18,16 +17,13 @@ const Qjsc = require('qjsc');
 const qjsc = new Qjsc();
 
 // Dump bytecode from javascript source;
-qjsc.dumpByteCode('function hello() { return 1 + 1};'); // <Buffer ...>
+qjsc.compile('function hello() { return 1 + 1};'); // <Buffer ...>
 
 // Use specified quickjs version
-qjsc = new Qjsc('20210327');
+qjsc = new Qjsc({version: '20210327'});
 
 // Get all supported versions.
-qjsc.getAllSupportedVersion();
-
-// Evaluate bytecode in quickjs engine directly.
-qjsc.evalByteCode(buffer);
+qjsc.getSupportedVersions();
 ```
 
 ## Contribute
