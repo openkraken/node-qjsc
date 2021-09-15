@@ -1,8 +1,7 @@
 # node-qjsc
-Node.js addon for the Quickjs compiler
+> Node.js addon for the [QuickJS](https://github.com/bellard/quickjs) compiler.
 
-supported Quickjs version:
-
+Current supported version:
 + 20210327
 
 ## Install
