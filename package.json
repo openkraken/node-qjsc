@@ -1,10 +1,13 @@
 {
   "name": "qjsc",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "Node.js addon for the Quickjs compiler",
   "main": "index.js",
+  "bin": {
+    "qjsc": "./bin/qjsc.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/jasmine test.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +21,11 @@
   "homepage": "https://github.com/openkraken/node-qjsc#readme",
   "dependencies": {
     "bindings": "^1.5.0",
+    "commander": "^8.2.0",
     "nan": "^2.15.0",
     "node-addon-api": "^4.1.0"
+  },
+  "devDependencies": {
+    "jasmine": "^3.9.0"
   }
 }
