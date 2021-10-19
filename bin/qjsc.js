@@ -28,7 +28,7 @@ const qjsc = new Qjsc();
 const sourceFileName = source.split('/').slice(-1)[0].split('.')[0];
 const sourceCode = fs.readFileSync(source, {encoding: 'utf-8'});
 
-let buffer = qjsc.dumpByteCode(sourceCode);
-let distPath = path.join(dist, sourceFileName + '.qbc');
+let buffer = qjsc.compile(sourceCode);
+let distPath = path.join(dist, sourceFileName + '.kbc1');
 fs.writeFileSync(distPath, buffer);
 console.log('Quickjs bytecode generated at: \n' + distPath);
