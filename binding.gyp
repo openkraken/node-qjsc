@@ -39,6 +39,12 @@
             },
           },
         }],
+        ["OS=='linux'", {
+          'cflags_cc': ['-fvisibility=hidden'],
+          "defines": [
+            "NAPI_DISABLE_CPP_EXCEPTIONS"
+          ],
+        }],
         ["OS=='mac'", {
           'cflags_cc': ['-fvisibility=hidden'],
           'xcode_settings': {
