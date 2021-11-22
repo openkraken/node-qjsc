@@ -12,11 +12,11 @@ static void reportError(Napi::Env &env, JSContext *ctx, JSValue error) {
   uint32_t messageLength = strlen(title) + 2;
   if (stack != nullptr) {
     messageLength += strlen(stack);
-    char message[messageLength];
+    char *message = new char[messageLength];
     sprintf(message, "%s\n%s", title, stack);
     Napi::TypeError::New(env, message).ThrowAsJavaScriptException();
   } else {
-    char message[messageLength];
+    char *message = new char[messageLength];
     sprintf(message, "%s", title);
     Napi::TypeError::New(env, message).ThrowAsJavaScriptException();
   }
