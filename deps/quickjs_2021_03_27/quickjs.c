@@ -102,7 +102,7 @@ int gettimeofday(struct timeval * tp, struct timezone * tzp)
 /* define to include Atomics.* operations which depend on the OS
    threads */
 #if !defined(EMSCRIPTEN)
-//#define CONFIG_ATOMICS
+#define CONFIG_ATOMICS
 #endif
 
 #if !defined(EMSCRIPTEN)
