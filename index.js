@@ -6,7 +6,8 @@ class Qjsc {
     if (supportedVersions.indexOf(version) === -1) {
       throw new Error('Unsupported QuickJS version: ' + version);
     }
-    this._bindings = require('bindings')(`qjsc_${version}.node`);
+    // TODO: Multiple quickjs version switch are removed because of prebuilt library.
+    this._bindings = require('node-gyp-build')();
   }
   help() {
     console.log('Supported QuckJS versions: ' + supportedVersions.join(', '));
