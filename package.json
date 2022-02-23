@@ -1,13 +1,15 @@
 {
   "name": "qjsc",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Node.js addon for the Quickjs compiler",
   "main": "index.js",
   "bin": {
     "qjsc": "./bin/qjsc.js"
   },
   "scripts": {
-    "test": "./node_modules/.bin/jasmine test.js"
+    "install": "node-gyp-build",
+    "test": "./node_modules/.bin/jasmine test.js",
+    "prebuild": "prebuildify --napi"
   },
   "repository": {
     "type": "git",
@@ -23,9 +25,14 @@
     "bindings": "^1.5.0",
     "commander": "^8.2.0",
     "nan": "^2.15.0",
-    "node-addon-api": "^4.1.0"
+    "node-addon-api": "^4.1.0",
+    "node-gyp-build": "^4.3.0"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "devDependencies": {
-    "jasmine": "^3.9.0"
+    "jasmine": "^3.9.0",
+    "prebuildify": "^5.0.0"
   }
 }
