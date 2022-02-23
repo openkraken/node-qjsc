@@ -1,6 +1,6 @@
 {
   "name": "qjsc",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Node.js addon for the Quickjs compiler",
   "main": "index.js",
   "bin": {
