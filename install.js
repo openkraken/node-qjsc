@@ -1,3 +1,5 @@
+// To compact with `npm install --no-bin-links`. We avoid to use `node-gyp-build` because it will failed caused by child_process.
+
 const tryLoadPreBuilt = require('node-gyp-build');
 const proc = require('child_process')
 const os = require('os')
