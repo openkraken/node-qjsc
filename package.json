@@ -15,8 +15,8 @@
     "type": "git",
     "url": "git+https://github.com/openkraken/node-qjsc.git"
   },
-  "author": "andycall",
-  "license": "MIT",
+  "author": "The Kraken Team",
+  "license": "Apache License 2.0",
   "bugs": {
     "url": "https://github.com/openkraken/node-qjsc/issues"
   },
