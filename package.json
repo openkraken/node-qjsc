@@ -9,6 +9,7 @@
   "scripts": {
     "install": "node install.js",
     "test": "./node_modules/.bin/jasmine test.js",
+    "build": "node-gyp rebuild --verbose",
     "prebuild": "prebuildify --napi"
   },
   "repository": {

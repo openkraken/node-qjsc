@@ -1,7 +1,6 @@
 {
   "targets": [
     {
-      # myModule is the name of your native addon
       "target_name": "qjsc_20210327",
       "sources": [
         "src/qjsc_20210327.cc",
