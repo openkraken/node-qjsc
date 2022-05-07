@@ -8,9 +8,9 @@ jobs:
   prebuild:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu, macos, windows]
         node: [12, 14, 16, 18]
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
@@ -20,5 +20,5 @@ jobs:
       - run: npm run prebuild
       - uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.os }}
-          path: build/
+          name: ${{ matrix.os }}-${{ matrix-node }}
+          path: build/Release/qjsc_20210327.node
