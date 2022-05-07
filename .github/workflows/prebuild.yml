@@ -20,5 +20,5 @@ jobs:
       - run: npm run prebuild
       - uses: actions/upload-artifact@v3
           with:
-          name: ${{ matrix.os }}-${{ matrix.node }}
-          path: build/
+            name: ${{ matrix.os }}-${{ matrix.node }}
+            path: build/
