@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+      - if: ${{ matrix.os == 'windows' }}
+        run: npm install --global windows-build-tools
       - run: npm install --ignore-scripts
       - run: npm run build
       - uses: actions/upload-artifact@v3
