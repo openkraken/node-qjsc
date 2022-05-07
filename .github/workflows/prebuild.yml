@@ -8,16 +8,16 @@ jobs:
   prebuild:
     strategy:
       matrix:
-        os: [ubuntu, macos, windows]
+        os: [windows-2016]
         node: [12, 14, 16, 18]
-    runs-on: ${{ matrix.os }}-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - if: ${{ matrix.os == 'windows' }}
-        run: npm install --global windows-build-tools
+        run: npm config set msvs_version 2017
       - run: npm install --ignore-scripts
       - run: npm run build
       - uses: actions/upload-artifact@v3
