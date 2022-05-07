@@ -26,6 +26,7 @@
     "commander": "^8.2.0",
     "nan": "^2.15.0",
     "node-addon-api": "^4.1.0",
+    "node-gyp": "^8.4.1",
     "node-gyp-build": "^4.3.0"
   },
   "engines": {
