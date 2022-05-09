@@ -23,8 +23,6 @@ jobs:
         run: |
           npm config set msvs_version 2022 -g
           git clone https://github.com/coapp-packages/pthreads.git --depth=1
-          mkdir compat
-          wget https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/compat/atomics/win32/stdatomic.h -O stdatomic.h
       - run: npm install --ignore-scripts
       - run: npm run build
       - uses: actions/upload-artifact@v3
