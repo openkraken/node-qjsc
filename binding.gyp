@@ -31,7 +31,8 @@
       'conditions': [
         ["OS=='win'", {
           "defines": [
-            "_HAS_EXCEPTIONS=1"
+            "_HAS_EXCEPTIONS=1",
+            "HAVE_STRUCT_TIMESPEC=1"
           ],
           "msvs_settings": {
             "VCCLCompilerTool": {
