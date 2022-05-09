@@ -20,7 +20,8 @@
       ],
       'include_dirs': [
         "<!(node -p \"require('node-addon-api').include_dir\")",
-        "pthreads"
+        "pthreads",
+        "compat"
       ],
       "defines": [
         'CONFIG_VERSION=\"2021-03-27\"'
