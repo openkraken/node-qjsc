@@ -12,7 +12,7 @@ jobs:
         node: [16]
     runs-on: ${{ matrix.os }}-latest
     env: 
-      VCINSTALLDIR: 'C:\Program Files\Microsoft Visual Studio\2022\Enterprise'
+      VCINSTALLDIR: 'C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VS'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
@@ -22,9 +22,6 @@ jobs:
         shell: powershell
         run: |
           npm config set msvs_version 2022 -g
-          npm install --global node-gyp@latest
-          npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
-          npm install --g --production windows-build-tools
       - run: npm install --ignore-scripts
       - run: npm run build
       - uses: actions/upload-artifact@v3
