@@ -38,7 +38,7 @@
           "msvs_settings": {
             "VCCLCompilerTool": {
               "ExceptionHandling": 1,
-              'AdditionalOptions': [ '-std:c11', ],
+              'AdditionalOptions': [ '/std:c11', ],
             },
           },
         }],
