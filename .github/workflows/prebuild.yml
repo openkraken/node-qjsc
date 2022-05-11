@@ -8,7 +8,7 @@ jobs:
   prebuild:
     strategy:
       matrix:
-        os: [windows]
+        os: [windows, linux, macos]
         node: [16]
     runs-on: ${{ matrix.os }}-latest
     env: 
@@ -27,5 +27,5 @@ jobs:
       - run: npm run build -- --msvs_version=2022
       - uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.os }}-${{ matrix.node }}
+          name: qjsc-prebuild-${{ matrix.os }}-node${{ matrix.node }}
           path: build/Release/qjsc_20210327.node
