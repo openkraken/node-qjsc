@@ -66,6 +66,8 @@ int gettimeofday(struct timeval * tp, struct timezone * tzp)
 }
 
 // From https://stackoverflow.com/questions/5404277/porting-clock-gettime-to-windows
+#define CLOCK_REALTIME 0
+
 LARGE_INTEGER getFILETIMEoffset()
 {
     SYSTEMTIME s;
