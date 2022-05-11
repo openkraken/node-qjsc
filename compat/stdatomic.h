@@ -80,6 +80,9 @@ typedef intptr_t atomic_ptrdiff_t;
 typedef intptr_t atomic_intmax_t;
 typedef intptr_t atomic_uintmax_t;
 
+#define _Atomic(T) \
+intptr_t
+
 #define atomic_store(object, desired)   \
 do {                                    \
     *(object) = (desired);              \
