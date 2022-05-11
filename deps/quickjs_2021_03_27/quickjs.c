@@ -44,6 +44,7 @@
 #pragma function (floor)
 
 #include <WinSock2.h>
+#include <compat-time.h>
 
 // From: https://stackoverflow.com/a/26085827
 int gettimeofday(struct timeval * tp, struct timezone * tzp)
@@ -53651,20 +53652,12 @@ static JSValue js_atomics_op(JSContext *ctx,
         a = func_name((_Atomic(uint32_t) *)ptr, v);     \
         break;
 #endif
-    case ATOMICS_OP_ADD | (0 << 3):             
-        a = func_name((_Atomic(uint8_t) *)ptr, v);       
-        break;                                           
-    case ATOMICS_OP_ADD | (1 << 3):             
-        a = func_name((_Atomic(uint16_t) *)ptr, v);     
-        break;                                          
-    case ATOMICS_OP_ADD | (2 << 3):             
-        a = func_name((_Atomic(uint32_t) *)ptr, v);     
-        break;
-        // OP(AND, atomic_fetch_and)
-        // OP(OR, atomic_fetch_or)
-        // OP(SUB, atomic_fetch_sub)
-        // OP(XOR, atomic_fetch_xor)
-        // OP(EXCHANGE, atomic_exchange)
+        OP(ADD, atomic_fetch_add)
+        OP(AND, atomic_fetch_and)
+        OP(OR, atomic_fetch_or)
+        OP(SUB, atomic_fetch_sub)
+        OP(XOR, atomic_fetch_xor)
+        OP(EXCHANGE, atomic_exchange)
 #undef OP
 
     case ATOMICS_OP_LOAD | (0 << 3):

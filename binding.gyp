@@ -20,8 +20,6 @@
       ],
       'include_dirs': [
         "<!(node -p \"require('node-addon-api').include_dir\")",
-        "pthreads",
-        "compat"
       ],
       "defines": [
         'CONFIG_VERSION=\"2021-03-27\"'
@@ -41,6 +39,11 @@
               'AdditionalOptions': [ '/std:c11', '/Zc:preprocessor', ],
             },
           },
+          'include_dirs': [
+            "<!(node -p \"require('node-addon-api').include_dir\")",
+            "pthreads",
+            "compat"
+          ],
         }],
         ["OS=='linux'", {
           'cflags_cc': ['-fvisibility=hidden'],
