@@ -53651,15 +53651,15 @@ static JSValue js_atomics_op(JSContext *ctx,
         a = func_name((_Atomic(uint32_t) *)ptr, v);     \
         break;
 #endif
-        case ATOMICS_OP_ADD | (0 << 3):             
+    case ATOMICS_OP_ADD | (0 << 3):             
         a = func_name((_Atomic(uint8_t) *)ptr, v);       
         break;                                           
-        case ATOMICS_OP_ADD | (1 << 3):             
-            a = func_name((_Atomic(uint16_t) *)ptr, v);     
-            break;                                          
-        case ATOMICS_OP_ADD | (2 << 3):             
-            a = func_name((_Atomic(uint32_t) *)ptr, v);     
-            break;
+    case ATOMICS_OP_ADD | (1 << 3):             
+        a = func_name((_Atomic(uint16_t) *)ptr, v);     
+        break;                                          
+    case ATOMICS_OP_ADD | (2 << 3):             
+        a = func_name((_Atomic(uint32_t) *)ptr, v);     
+        break;
         // OP(AND, atomic_fetch_and)
         // OP(OR, atomic_fetch_or)
         // OP(SUB, atomic_fetch_sub)
