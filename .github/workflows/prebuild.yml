@@ -2,7 +2,6 @@ name: Prebuild the binaries.
 
 on:
   workflow_dispatch:
-  push:
 
 jobs:
   prebuild:
@@ -22,7 +21,6 @@ jobs:
         shell: powershell
         run: |
           npm config set msvs_version 2022 -g
-          git clone https://github.com/coapp-packages/pthreads.git --depth=1
       - run: npm install --ignore-scripts
       - run: npm run build -- --msvs_version=2022
       - uses: actions/upload-artifact@v3
