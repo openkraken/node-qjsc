@@ -1,0 +1,29 @@
+name: Prebuild the binaries.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prebuild:
+    strategy:
+      matrix:
+        os: [windows, linux, macos]
+        node: [16]
+    runs-on: ${{ matrix.os }}-latest
+    env: 
+      VCINSTALLDIR: 'C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - if: ${{ matrix.os == 'windows' }}
+        shell: powershell
+        run: |
+          npm config set msvs_version 2022 -g
+      - run: npm install --ignore-scripts
+      - run: npm run build -- --msvs_version=2022
+      - uses: actions/upload-artifact@v3
+        with:
+          name: qjsc-prebuild-${{ matrix.os }}-node${{ matrix.node }}
+          path: build/Release/qjsc_20210327.node
