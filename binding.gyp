@@ -4,6 +4,8 @@
       "target_name": "qjsc_20210327",
       "sources": [
         "src/qjsc_20210327.cc",
+        "deps/quickjs_2021_03_27/libbf.h",
+        "deps/quickjs_2021_03_27/libbf.c",
         "deps/quickjs_2021_03_27/cutils.c",
         "deps/quickjs_2021_03_27/cutils.h",
         "deps/quickjs_2021_03_27/libregexp.c",
@@ -22,6 +24,7 @@
         "<!(node -p \"require('node-addon-api').include_dir\")",
       ],
       "defines": [
+        'CONFIG_BIGNUM',
         'CONFIG_VERSION=\"2021-03-27\"'
       ],
       'cflags!': [ '-fexceptions' ],
